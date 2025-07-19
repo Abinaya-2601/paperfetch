@@ -1,31 +1,25 @@
-Great question! Let’s evaluate your current `README.md` against the **required documentation criteria**:
-
----
-
-### ✅ Your current `README.md` **satisfies**:
-
-#### 1. ✅ **How the code is organized**
+1. ✅ **How the code is organized**
 
 * You have a **Project Structure** section listing files and their purposes.
 
-#### 2. ✅ **Instructions on how to install dependencies and execute the program**
+2. ✅ **Instructions on how to install dependencies and execute the program**
 
 * You provide installation steps using **Poetry**, and include an example usage.
 
-#### 3. ✅ **Mention any tools (e.g., LLMs or libraries) used**
+3. ✅ **Mention any tools (e.g., LLMs or libraries) used**
 
 * You list **Python**, **Poetry**, **Requests**, and **PubMed API**, each with appropriate links.
 
 ---
 
-### ⚠️ Small Enhancements Suggested:
+⚠️ Small Enhancements Suggested:
 
 * Add **direct links to each script** in the GitHub repo.
 * Clarify that the program uses **heuristics**, not a true **LLM**, for non-academic author detection (important if you're being evaluated on "tool usage").
 
 ---
 
-### ✅ Final Corrected and Enhanced `README.md`
+✅ Final Corrected and Enhanced `README.md`
 
 ```markdown
 # PaperFetch
@@ -68,14 +62,14 @@ poetry install
 
 ---
 
-## ▶️ How to Run
+▶️ How to Run
 
 ```bash
 # Basic query to fetch papers and save results
 poetry run get-papers-list "your search term here" -f results.csv
 ```
 
-### CLI Options:
+CLI Options:
 
 | Option          | Description                                   |
 | --------------- | --------------------------------------------- |
@@ -85,7 +79,7 @@ poetry run get-papers-list "your search term here" -f results.csv
 
 ---
 
-## 🧠 Non-Academic Author Detection Logic
+🧠 Non-Academic Author Detection Logic
 
 This tool **does not use an LLM**, but uses rule-based heuristics to detect non-academic authors:
 
@@ -100,7 +94,7 @@ Such names are listed in the `Non-academic Authors` column in the output CSV.
 
 ---
 
-## 🛠️ Tools & Libraries Used
+🛠️ Tools & Libraries Used
 
 | Tool/Library                                                           | Purpose                    | Link |
 | ---------------------------------------------------------------------- | -------------------------- | ---- |
@@ -111,7 +105,7 @@ Such names are listed in the `Non-academic Authors` column in the output CSV.
 
 ---
 
-## 📄 Output Format (CSV)
+📄 Output Format (CSV)
 
 The program outputs results in the following structure:
 
