@@ -103,6 +103,11 @@ Such names are listed in the `Non-academic Authors` column in the output CSV.
 | [Requests](https://pypi.org/project/requests/)                         | HTTP requests to PubMed    |      |
 | [PubMed E-Utilities API](https://www.ncbi.nlm.nih.gov/books/NBK25500/) | Source of publication data |      |
 
+
+- [Typer](https://typer.tiangolo.com/)
+- [Biopython](https://biopython.org/)
+- [Rich](https://github.com/Textualize/rich)
+
 ---
 
 📄 Output Format (CSV)
