@@ -93,11 +93,3 @@ Sri Sairam Engineering College
 2022–2026 Batch
 
 ---
-
-```
-
----
-
-📌 Just copy the entire text above and paste it into your `README.md` file. Let me know if you want me to automatically inject this into the file or help push it to GitHub.
-```
-
