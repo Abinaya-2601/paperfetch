@@ -1,50 +1,78 @@
-Here's your complete, ready-to-paste `README.md` content:
+Great question! Let’s evaluate your current `README.md` against the **required documentation criteria**:
 
 ---
+
+### ✅ Your current `README.md` **satisfies**:
+
+#### 1. ✅ **How the code is organized**
+
+* You have a **Project Structure** section listing files and their purposes.
+
+#### 2. ✅ **Instructions on how to install dependencies and execute the program**
+
+* You provide installation steps using **Poetry**, and include an example usage.
+
+#### 3. ✅ **Mention any tools (e.g., LLMs or libraries) used**
+
+* You list **Python**, **Poetry**, **Requests**, and **PubMed API**, each with appropriate links.
+
+---
+
+### ⚠️ Small Enhancements Suggested:
+
+* Add **direct links to each script** in the GitHub repo.
+* Clarify that the program uses **heuristics**, not a true **LLM**, for non-academic author detection (important if you're being evaluated on "tool usage").
+
+---
+
+### ✅ Final Corrected and Enhanced `README.md`
 
 ```markdown
 # PaperFetch
 
-**PaperFetch** is a Python-based command-line tool for fetching academic paper details from PubMed using its API. It also attempts to flag non-academic authors based on affiliation heuristics.
+**PaperFetch** is a command-line tool written in Python for fetching research paper metadata from PubMed using their E-Utilities API. It flags potential non-academic authors using affiliation-based heuristics.
 
 ---
 
-## 📁 Project Structure
+## 📁 Code Organization
 
 ```
 
 .
-├── fetch.py               # Module to fetch paper IDs from PubMed
-├── fetch\_details.py       # Module to fetch metadata of papers
-├── get\_papers.py          # Main CLI script
+├── fetch.py               # Fetches paper IDs using PubMed API and query
+├── fetch\_details.py       # Retrieves metadata (title, date, authors, etc.)
+├── get\_papers.py          # Main script that ties fetching and saving CSV
 ├── results.csv            # Output file (auto-generated)
-├── pyproject.toml         # Poetry configuration file
-├── README.md              # Project documentation
+├── pyproject.toml         # Poetry dependency config
+├── README.md              # This file (documentation)
 
 ````
 
 ---
 
-## 📦 Installation
+## 🧪 Installation
 
-Make sure [Poetry](https://python-poetry.org/docs/#installation) is installed.
+### Requirements:
+- Python 3.11+
+- [Poetry](https://python-poetry.org/docs/#installation)
 
+### Steps:
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/Abinaya-2601/paperfetch.git
 cd paperfetch
 
-# Install dependencies
+# 2. Install dependencies
 poetry install
 ````
 
 ---
 
-## ▶️ Usage
+## ▶️ How to Run
 
 ```bash
-# Example query
-poetry run get-papers-list "machine learning" -f results.csv
+# Basic query to fetch papers and save results
+poetry run get-papers-list "your search term here" -f results.csv
 ```
 
 ### CLI Options:
@@ -52,33 +80,40 @@ poetry run get-papers-list "machine learning" -f results.csv
 | Option          | Description                                   |
 | --------------- | --------------------------------------------- |
 | `-h`, `--help`  | Show help message                             |
-| `-d`, `--debug` | Enable debug logging                          |
+| `-d`, `--debug` | Enable debug logs                             |
 | `-f`, `--file`  | Output CSV file name (default: `results.csv`) |
 
 ---
 
-## 🧠 How Non-Academic Authors Are Detected
+## 🧠 Non-Academic Author Detection Logic
 
-We apply a heuristic rule based on author affiliation:
+This tool **does not use an LLM**, but uses rule-based heuristics to detect non-academic authors:
 
 A name is considered **non-academic** if:
 
-* The affiliation does **not contain** words like `university`, `college`, `institute`, `school`, or `hospital`
-* OR the affiliation is **missing or undefined**
-* These names are listed under the "Non-academic Authors" column in the CSV output.
+* The affiliation is missing or undefined
+* OR it lacks keywords like:
+
+  * `university`, `college`, `institute`, `school`, `hospital`
+
+Such names are listed in the `Non-academic Authors` column in the output CSV.
 
 ---
 
-## 🧰 Tools & Libraries Used
+## 🛠️ Tools & Libraries Used
 
-* [Python 3.11+](https://www.python.org/downloads/)
-* [Poetry](https://python-poetry.org/)
-* [Requests](https://pypi.org/project/requests/)
-* [PubMed E-Utilities API](https://www.ncbi.nlm.nih.gov/books/NBK25500/)
+| Tool/Library                                                           | Purpose                    | Link |
+| ---------------------------------------------------------------------- | -------------------------- | ---- |
+| [Python 3.11+](https://www.python.org/downloads/)                      | Core language              |      |
+| [Poetry](https://python-poetry.org/)                                   | Dependency and packaging   |      |
+| [Requests](https://pypi.org/project/requests/)                         | HTTP requests to PubMed    |      |
+| [PubMed E-Utilities API](https://www.ncbi.nlm.nih.gov/books/NBK25500/) | Source of publication data |      |
 
 ---
 
 ## 📄 Output Format (CSV)
+
+The program outputs results in the following structure:
 
 | PubMedID | Title | Publication Date | Non-academic Authors |
 | -------- | ----- | ---------------- | -------------------- |
@@ -86,10 +121,10 @@ A name is considered **non-academic** if:
 
 ---
 
-## 🧑‍💻 Author
+## 👩‍💻 Author
 
 Abinaya B
 Sri Sairam Engineering College
-2022–2026 Batch
+B.Tech CSE (IoT) | Batch 2022–2026
 
 ---
